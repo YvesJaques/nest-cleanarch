@@ -21,9 +21,9 @@ function generateUniqueDatabaseURL(schemaId: string) {
 const schemaId = randomUUID()
 
 beforeAll(async () => {
-  const databaseURL = generateUniqueDatabaseURL(randomUUID())
+  const databaseURL = generateUniqueDatabaseURL(schemaId)
 
-  process.env.DATA_URL = databaseURL
+  process.env.DATABASE_URL = databaseURL
 
   execSync('yarn prisma migrate deploy')
 })
